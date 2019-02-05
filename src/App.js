@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import Login from './login/containers/login'
+import Nav from './nav/components/nav'
+import Grid from '@material-ui/core/Grid';
 
 import './App.css';
 
 class App extends Component {
   render() {
     return (
+      <Grid container spacing={24}>
+        <Grid item xs={12} md={12}>
+          <Nav></Nav>
+        </Grid>
+      
+        <Grid item xs={12} md={4} />
 
-      <div className="App">
-        <header className="App-header col-md-12">
-          <h1>React form app</h1>
-        </header>
+        <Grid item xs={12} md={4}>
+          <Login/>
+        </Grid>
 
-        <div className="row">
-          <div className="col-md-4"></div>
-          <div className="col-md-4 content">
-            <Login/>
-          </div>
-
-          <div className="col-md-4"></div>
-        </div>
-      </div>
+        <Grid item xs={12} md={4} />
+      </Grid>
     );
   }
 }

@@ -1,13 +1,16 @@
 import React from 'react';
+import './login-layout.css'
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 const LoginLayout = props => {
     return (
-        <div>
-            <form onSubmit={props.handleSubmit} >
+        <Paper >
+            <form onSubmit={props.handleSubmit} className="form-login">
                 <div className="formGroup">
-                    <label htmlFor="name">Name</label>
-
-                    <input
+                    <TextField
                         name="name"
                         className="form-control"
                         id="name"
@@ -22,8 +25,7 @@ const LoginLayout = props => {
                 </div>
 
                 <div className="formGroup">
-                    <label htmlFor="email" >Email</label>
-                    <input
+                    <TextField
                         name="email"
                         className="form-control"
                         id="email"
@@ -37,14 +39,14 @@ const LoginLayout = props => {
                     </div>
                 </div>
 
-                <button
+                <Button variant="contained" color="primary"
                     type="submit"
-                    className="btn btn-success btn-block"
                 >
                     Submit
-                </button>
+                </Button>
+
             </form>
-        </div>
+        </Paper>
     )
 }
 export default LoginLayout;
